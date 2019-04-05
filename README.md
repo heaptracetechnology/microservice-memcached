@@ -24,9 +24,13 @@ omg build
 
 ### CLI
 
-##### Set Key-value pair cache
+##### Set Key-value cache
 ```sh
-$ 
+$ omg run set -a key=<SET_KEY> -a value=<SET_VALUE> -e MEMCACHED_HOST=<HOST_ADDRESS> -e MEMCACHED_PORT=<PORT_NUMBER>
+```
+##### Get value pair cache
+```sh
+$ omg run get -a key=<SET_KEY> -e MEMCACHED_HOST=<HOST_ADDRESS> -e MEMCACHED_PORT=<PORT_NUMBER>
 ```
 ## License
 ### [MIT](https://choosealicense.com/licenses/mit/)
