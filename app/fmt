@@ -1,0 +1,15 @@
+mode: set
+github.com/heaptracetechnology/microservice-firebase/messaging/message.go:24.65,30.16 4 1
+github.com/heaptracetechnology/microservice-firebase/messaging/message.go:34.2,38.15 4 1
+github.com/heaptracetechnology/microservice-firebase/messaging/message.go:43.2,61.20 6 1
+github.com/heaptracetechnology/microservice-firebase/messaging/message.go:65.2,66.51 2 1
+github.com/heaptracetechnology/microservice-firebase/messaging/message.go:30.16,33.3 2 0
+github.com/heaptracetechnology/microservice-firebase/messaging/message.go:38.15,41.3 2 0
+github.com/heaptracetechnology/microservice-firebase/messaging/message.go:61.20,64.3 2 0
+github.com/heaptracetechnology/microservice-firebase/messaging/message.go:70.65,77.16 5 1
+github.com/heaptracetechnology/microservice-firebase/messaging/message.go:82.2,86.15 4 1
+github.com/heaptracetechnology/microservice-firebase/messaging/message.go:91.2,108.20 8 1
+github.com/heaptracetechnology/microservice-firebase/messaging/message.go:112.2,113.51 2 1
+github.com/heaptracetechnology/microservice-firebase/messaging/message.go:77.16,80.3 2 0
+github.com/heaptracetechnology/microservice-firebase/messaging/message.go:86.15,89.3 2 0
+github.com/heaptracetechnology/microservice-firebase/messaging/message.go:108.20,111.3 2 0
