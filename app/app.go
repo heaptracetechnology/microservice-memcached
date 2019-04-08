@@ -3,12 +3,13 @@ package app
 import (
 	b64 "encoding/base64"
 	"encoding/json"
-	"github.com/bradfitz/gomemcache/memcache"
-	"github.com/gorilla/mux"
-	"github.com/heaptracetechnology/microservice-memcached/result"
 	"io/ioutil"
 	"net/http"
 	"os"
+
+	"github.com/bradfitz/gomemcache/memcache"
+	"github.com/gorilla/mux"
+	"github.com/heaptracetechnology/microservice-memcached/result"
 )
 
 type Message struct {
@@ -22,7 +23,7 @@ type ArgumentData struct {
 	Value string `json:"topic"`
 }
 
-//Set memcached
+//SetMemcached
 func SetMemcached(response http.ResponseWriter, request *http.Request) {
 
 	var memcachedHost = os.Getenv("MEMCACHED_HOST")
@@ -50,7 +51,7 @@ func SetMemcached(response http.ResponseWriter, request *http.Request) {
 		result.WriteErrorResponse(response, setErr)
 		return
 	} else {
-		message := Message{"true", "Cache is saved", http.StatusBadRequest}
+		message := Message{"true", "Cache is saved", http.StatusOK}
 		bytes, _ := json.Marshal(message)
 		result.WriteJsonResponse(response, bytes, http.StatusOK)
 	}
