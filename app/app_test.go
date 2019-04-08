@@ -21,6 +21,9 @@ var _ = Describe("Set Memcached", func() {
 	setMemcached := ArgumentData{Key: "Hello", Value: "World"}
 	requestBody := new(bytes.Buffer)
 	json.NewEncoder(requestBody).Encode(setMemcached)
+	if err != nil {
+		log.Fatal(err)
+	}
 	req, err := http.NewRequest("POST", "/set", requestBody)
 	if err != nil {
 		log.Fatal(err)
@@ -46,6 +49,9 @@ var _ = Describe("Set Memcached", func() {
 	setMemcached := []byte(`{Key: "Hello", Value: "World"}`)
 	requestBody := new(bytes.Buffer)
 	json.NewEncoder(requestBody).Encode(setMemcached)
+	if err != nil {
+		log.Fatal(err)
+	}
 	req, err := http.NewRequest("POST", "/set", requestBody)
 	if err != nil {
 		log.Fatal(err)
@@ -71,6 +77,9 @@ var _ = Describe("Get Memcached", func() {
 	getMemcached := ArgumentData{Key: "Hello"}
 	requestBody := new(bytes.Buffer)
 	json.NewEncoder(requestBody).Encode(getMemcached)
+	if err != nil {
+		log.Fatal(err)
+	}
 	req, err := http.NewRequest("POST", "/get/key", requestBody)
 	if err != nil {
 		log.Fatal(err)
@@ -101,6 +110,9 @@ var _ = Describe("Get Memcached", func() {
 	getMemcached := ArgumentData{Key: "Hello"}
 	requestBody := new(bytes.Buffer)
 	json.NewEncoder(requestBody).Encode(getMemcached)
+	if err != nil {
+		log.Fatal(err)
+	}
 	req, err := http.NewRequest("POST", "/get/key", requestBody)
 	if err != nil {
 		log.Fatal(err)
