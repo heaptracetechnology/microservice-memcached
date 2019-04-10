@@ -26,6 +26,7 @@ type ArgumentData struct {
 //SetMemcached
 func SetMemcached(response http.ResponseWriter, request *http.Request) {
 
+	responseWriter.Header().Set("Content-Type", "application/json")
 	var memcachedHost = os.Getenv("MEMCACHED_HOST")
 	var memcachedPort = os.Getenv("MEMCACHED_PORT")
 
@@ -61,6 +62,7 @@ func SetMemcached(response http.ResponseWriter, request *http.Request) {
 //Get memcached
 func GetMemcached(response http.ResponseWriter, request *http.Request) {
 
+	responseWriter.Header().Set("Content-Type", "application/json")
 	var memcachedHost = os.Getenv("MEMCACHED_HOST")
 	var memcachedPort = os.Getenv("MEMCACHED_PORT")
 
