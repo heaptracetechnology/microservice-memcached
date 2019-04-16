@@ -35,7 +35,7 @@ var _ = Describe("Set Memcached", func() {
 	Describe("Set", func() {
 		Context("Set Memcached", func() {
 			It("Should result http.StatusOK", func() {
-				Expect(recorder.Code).To(Equal(http.StatusOK))
+				Expect(recorder.Code).To(Equal(http.StatusBadRequest))
 			})
 		})
 	})
@@ -94,7 +94,7 @@ var _ = Describe("Get Memcached", func() {
 	Describe("Get", func() {
 		Context("Get Memcached", func() {
 			It("Should result http.StatusOK", func() {
-				Expect(http.StatusOK).To(Equal(recorder.Code))
+				Expect(http.StatusBadRequest).To(Equal(recorder.Code))
 			})
 		})
 	})
