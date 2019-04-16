@@ -2,9 +2,8 @@
 An OMG service for Memcached, it is a general-purpose distributed memory caching system.
 
 [![Open Microservice Guide](https://img.shields.io/badge/OMG-enabled-brightgreen.svg?style=for-the-badge)](https://microservice.guide)
-<!-- [![Build Status](https://travis-ci.com/heaptracetechnology/microservice-firebase.svg?branch=master)](https://travis-ci.com/heaptracetechnology/microservice-firebase)
-[![codecov](https://codecov.io/gh/heaptracetechnology/microservice-firebase/branch/master/graph/badge.svg)](https://codecov.io/gh/heaptracetechnology/microservice-firebase)
-[![GolangCI](https://golangci.com/badges/github.com/golangci/golangci-web.svg)](https://golangci.com) -->
+[![Build Status](https://travis-ci.com/heaptracetechnology/microservice-memcached.svg?branch=master)](https://travis-ci.com/heaptracetechnology/microservice-memcached)
+[![codecov](https://codecov.io/gh/heaptracetechnology/microservice-memcached/branch/master/graph/badge.svg)](https://codecov.io/gh/heaptracetechnology/microservice-memcached)
 
 ## [OMG](hhttps://microservice.guide) CLI
 
