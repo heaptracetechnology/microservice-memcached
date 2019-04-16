@@ -35,7 +35,7 @@ var _ = Describe("Set Memcached", func() {
 	Describe("Set", func() {
 		Context("Set Memcached", func() {
 			It("Should result http.StatusOK", func() {
-				Expect(http.StatusOK).To(Equal(recorder.Code))
+				Expect(recorder.Code).To(Equal(http.StatusOK))
 			})
 		})
 	})
@@ -43,8 +43,6 @@ var _ = Describe("Set Memcached", func() {
 
 //Test Set method with Invalid data
 var _ = Describe("Set Memcached", func() {
-	os.Setenv("MEMCACHED_HOST", "192.168.0.61")
-	os.Setenv("MEMCACHED_PORT", "11211")
 
 	setMemcached := []byte(`{Key: "qwerty", Value: "keyboard"}`)
 	requestBody := new(bytes.Buffer)
@@ -63,7 +61,7 @@ var _ = Describe("Set Memcached", func() {
 	Describe("Set", func() {
 		Context("Set Memcached", func() {
 			It("Should result http.StatusBadRequest", func() {
-				Expect(http.StatusBadRequest).To(Equal(recorder.Code))
+				Expect(recorder.Code).To(Equal(http.StatusBadRequest))
 			})
 		})
 	})
@@ -93,8 +91,8 @@ var _ = Describe("Get Memcached", func() {
 	handler := http.HandlerFunc(GetMemcached)
 	handler.ServeHTTP(recorder, req)
 
-	Describe("Set", func() {
-		Context("Set Memcached", func() {
+	Describe("Get", func() {
+		Context("Get Memcached", func() {
 			It("Should result http.StatusOK", func() {
 				Expect(http.StatusOK).To(Equal(recorder.Code))
 			})
@@ -104,8 +102,6 @@ var _ = Describe("Get Memcached", func() {
 
 //Test Get method with Invalid data
 var _ = Describe("Get Memcached", func() {
-	os.Setenv("MEMCACHED_HOST", "192.168.0.61")
-	os.Setenv("MEMCACHED_PORT", "11211")
 
 	getMemcached := ArgumentData{Key: "qwerty"}
 	requestBody := new(bytes.Buffer)
