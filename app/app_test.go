@@ -18,7 +18,7 @@ var _ = Describe("Set Memcached", func() {
 	os.Setenv("MEMCACHED_HOST", "192.168.0.61")
 	os.Setenv("MEMCACHED_PORT", "11211")
 
-	setMemcached := ArgumentData{Key: "Hello", Value: "World"}
+	setMemcached := ArgumentData{Key: "qwerty", Value: "keyboard"}
 	requestBody := new(bytes.Buffer)
 	err := json.NewEncoder(requestBody).Encode(setMemcached)
 	if err != nil {
@@ -46,7 +46,7 @@ var _ = Describe("Set Memcached", func() {
 	os.Setenv("MEMCACHED_HOST", "192.168.0.61")
 	os.Setenv("MEMCACHED_PORT", "11211")
 
-	setMemcached := []byte(`{Key: "Hello", Value: "World"}`)
+	setMemcached := []byte(`{Key: "qwerty", Value: "keyboard"}`)
 	requestBody := new(bytes.Buffer)
 	err := json.NewEncoder(requestBody).Encode(setMemcached)
 	if err != nil {
@@ -74,7 +74,7 @@ var _ = Describe("Get Memcached", func() {
 	os.Setenv("MEMCACHED_HOST", "192.168.0.61")
 	os.Setenv("MEMCACHED_PORT", "11211")
 
-	getMemcached := ArgumentData{Key: "Hello"}
+	getMemcached := ArgumentData{Key: "qwerty"}
 	requestBody := new(bytes.Buffer)
 	err := json.NewEncoder(requestBody).Encode(getMemcached)
 	if err != nil {
@@ -85,7 +85,7 @@ var _ = Describe("Get Memcached", func() {
 		log.Fatal(err)
 	}
 	vars := map[string]string{
-		"key": "Hello",
+		"key": "qwerty",
 	}
 
 	req = mux.SetURLVars(req, vars)
@@ -107,7 +107,7 @@ var _ = Describe("Get Memcached", func() {
 	os.Setenv("MEMCACHED_HOST", "192.168.0.61")
 	os.Setenv("MEMCACHED_PORT", "11211")
 
-	getMemcached := ArgumentData{Key: "Hello"}
+	getMemcached := ArgumentData{Key: "qwerty"}
 	requestBody := new(bytes.Buffer)
 	err := json.NewEncoder(requestBody).Encode(getMemcached)
 	if err != nil {

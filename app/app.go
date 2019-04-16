@@ -1,15 +1,13 @@
 package app
 
 import (
-	b64 "encoding/base64"
 	"encoding/json"
-	"io/ioutil"
-	"net/http"
-	"os"
-
 	"github.com/bradfitz/gomemcache/memcache"
 	"github.com/gorilla/mux"
 	"github.com/heaptracetechnology/microservice-memcached/result"
+	"io/ioutil"
+	"net/http"
+	"os"
 )
 
 type Message struct {
@@ -18,9 +16,16 @@ type Message struct {
 	StatusCode int    `json:"statuscode"`
 }
 
+type GetResponse struct {
+	Key        string `json:"key"`
+	Value      string `json:"value"`
+	Expiration int32  `json:"expiration"`
+	StatusCode int    `json:"statuscode"`
+}
+
 type ArgumentData struct {
 	Key   string `json:"key"`
-	Value string `json:"topic"`
+	Value string `json:"value"`
 }
 
 //SetMemcached
@@ -55,7 +60,6 @@ func SetMemcached(response http.ResponseWriter, request *http.Request) {
 		bytes, _ := json.Marshal(message)
 		result.WriteJsonResponse(response, bytes, http.StatusOK)
 	}
-
 }
 
 //Get memcached
@@ -76,15 +80,16 @@ func GetMemcached(response http.ResponseWriter, request *http.Request) {
 		return
 	}
 
+	var getresult GetResponse
 	if res != nil {
-
 		if res.Value != nil {
-			decode, _ := b64.StdEncoding.DecodeString(string(res.Value))
-			res.Value = decode
+			getresult.Expiration = res.Expiration
+			getresult.Key = res.Key
+			getresult.StatusCode = 200
+			getresult.Value = string(res.Value)
 		}
 
-		bytes, _ := json.Marshal(res)
+		bytes, _ := json.Marshal(getresult)
 		result.WriteJsonResponse(response, bytes, http.StatusOK)
 	}
-
 }

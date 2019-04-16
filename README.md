@@ -42,5 +42,5 @@ docker build -t microservice-memcached .
 ```
 ### RUN
 ```
-docker run -p 8000:8000 microservice-memcached
+docker run -p 8000:8000 -p 11211:11211 microservice-memcached
 ```
