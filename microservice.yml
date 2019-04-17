@@ -65,7 +65,7 @@ actions:
         value:
           help: The value returned from cache for particular key
           type: string
-        statuscode:
+        status_code:
           help: Http status code.
           type: int
 environment:
