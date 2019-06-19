@@ -33,6 +33,11 @@ $ omg run set -a key=<SET_KEY> -a value=<SET_VALUE> -e MEMCACHED_HOST=<HOST_ADDR
 ```shell
 $ omg run get -a key=<SET_KEY> -e MEMCACHED_HOST=<HOST_ADDRESS> -e MEMCACHED_PORT=<PORT_NUMBER>
 ```
+**Note**: Start the memcached local server with below command.
+```sh
+$ docker run -p 11211:11211 --name my-memcache -d memcached memcached -m 64
+```
+
 **Note**: the OMG CLI requires [Docker](https://docs.docker.com/install/) to be installed.
 
 ## License
