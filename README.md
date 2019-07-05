@@ -1,8 +1,9 @@
 # _Memcached_ OMG Microservice
 
 [![Open Microservice Guide](https://img.shields.io/badge/OMG%20Enabled-👍-green.svg?)](https://microservice.guide)
-[![Build Status](https://travis-ci.com/heaptracetechnology/microservice-memcached.svg?branch=master)](https://travis-ci.com/heaptracetechnology/microservice-memcached)
-[![codecov](https://codecov.io/gh/heaptracetechnology/microservice-memcached/branch/master/graph/badge.svg)](https://codecov.io/gh/heaptracetechnology/microservice-memcached)
+[![Build Status](https://travis-ci.com/omg-services/memcached.svg?branch=master)](https://travis-ci.com/omg-services/memcached)
+[![codecov](https://codecov.io/gh/omg-services/memcached/branch/master/graph/badge.svg)](https://codecov.io/gh/omg-services/memcached)
+
 
 An OMG service for Memcached, it is a general-purpose distributed memory caching system.
 

@@ -13,15 +13,10 @@ import (
 	. "github.com/onsi/gomega"
 )
 
-var (
-	host = os.Getenv("MEMCACHED_HOST")
-	port = os.Getenv("MEMCACHED_PORT")
-)
-
 //Test Set method with valid data
 var _ = Describe("Set Memcached", func() {
-	os.Setenv("MEMCACHED_HOST", host)
-	os.Setenv("MEMCACHED_PORT", port)
+	os.Setenv("MEMCACHED_HOST", "")
+	os.Setenv("MEMCACHED_PORT", "")
 
 	setMemcached := ArgumentData{Key: "qwerty", Value: "keyboard"}
 	requestBody := new(bytes.Buffer)
@@ -74,8 +69,8 @@ var _ = Describe("Set Memcached", func() {
 
 //Test Get method with valid data
 var _ = Describe("Get Memcached", func() {
-	os.Setenv("MEMCACHED_HOST", host)
-	os.Setenv("MEMCACHED_PORT", port)
+	os.Setenv("MEMCACHED_HOST", "")
+	os.Setenv("MEMCACHED_PORT", "")
 
 	getMemcached := ArgumentData{Key: "qwerty"}
 	requestBody := new(bytes.Buffer)
