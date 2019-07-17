@@ -15,8 +15,8 @@ import (
 
 //Test Set method with valid data
 var _ = Describe("Set Memcached", func() {
-	os.Setenv("MEMCACHED_HOST", "192.168.0.61")
-	os.Setenv("MEMCACHED_PORT", "11211")
+	os.Setenv("MEMCACHED_HOST", "")
+	os.Setenv("MEMCACHED_PORT", "")
 
 	setMemcached := ArgumentData{Key: "qwerty", Value: "keyboard"}
 	requestBody := new(bytes.Buffer)
@@ -69,8 +69,8 @@ var _ = Describe("Set Memcached", func() {
 
 //Test Get method with valid data
 var _ = Describe("Get Memcached", func() {
-	os.Setenv("MEMCACHED_HOST", "192.168.0.61")
-	os.Setenv("MEMCACHED_PORT", "11211")
+	os.Setenv("MEMCACHED_HOST", "")
+	os.Setenv("MEMCACHED_PORT", "")
 
 	getMemcached := ArgumentData{Key: "qwerty"}
 	requestBody := new(bytes.Buffer)
