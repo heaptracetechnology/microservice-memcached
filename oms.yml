@@ -1,28 +1,29 @@
-omg: 1
-lifecycle:
-  startup:
-    command: ["microservice-memcached"]
+oms: 1
 info:
   version: 1.0.0
   title: Memcached
   description: This is a memcached service
   contact:
-    name: Rohit Shetty
-    url: https://github.com/ht68rohit
-    email: rohits@heaptrace.com
+    name: Open Microservices
+    url: 'https://openmicroservices.org'
+    email: core@openmicroservices.org
   license:
     name: MIT
-    url: https://opensource.org/licenses/MIT
+    url: 'https://opensource.org/licenses/MIT'
+lifecycle:
+  startup:
+    command:
+      - microservice-memcached
 actions:
   set:
     help: Set key/value pair value in memcached
-    http: 
+    http:
       port: 8000
       method: post
       path: /set
       contentType: application/json
     arguments:
-      key: 
+      key:
         type: string
         in: requestBody
         required: true
@@ -30,7 +31,7 @@ actions:
         type: any
         in: requestBody
         required: true
-    output:   
+    output:
       type: string
       contentType: application/json
       properties:
@@ -45,16 +46,16 @@ actions:
           type: int
   get:
     help: Get value from server/local machine
-    http: 
+    http:
       port: 8000
       method: post
-      path: /get/{key}
+      path: '/get/{key}'
       contentType: application/json
     arguments:
-      key: 
+      key:
         type: string
         in: path
-        required: true 
+        required: true
     output:
       type: object
       contentType: application/json
