@@ -32,7 +32,7 @@ actions:
         in: requestBody
         required: true
     output:
-      type: string
+      type: object
       contentType: application/json
       properties:
         success:

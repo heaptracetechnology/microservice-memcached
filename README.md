@@ -1,45 +1,99 @@
-# _Memcached_ OMG Microservice
+# _Memcached_ Open Microservice
 
-[![Open Microservice Guide](https://img.shields.io/badge/OMG%20Enabled-👍-green.svg?)](https://microservice.guide)
-[![Build Status](https://travis-ci.com/omg-services/memcached.svg?branch=master)](https://travis-ci.com/omg-services/memcached)
-[![codecov](https://codecov.io/gh/omg-services/memcached/branch/master/graph/badge.svg)](https://codecov.io/gh/omg-services/memcached)
+> This is a memcached service
 
+[![Open Microservice Specification Version](https://img.shields.io/badge/Open%20Microservice-1.0-477bf3.svg)](https://openmicroservices.org)
+[![Open Microservices Spectrum Chat](https://withspectrum.github.io/badge/badge.svg)](https://spectrum.chat/open-microservices)
+[![Open Microservices Code of Conduct](https://img.shields.io/badge/Contributor%20Covenant-v1.4%20adopted-ff69b4.svg)](https://github.com/oms-services/.github/blob/master/CODE_OF_CONDUCT.md)
+[![Open Microservices Commitzen](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
-An OMG service for Memcached, it is a general-purpose distributed memory caching system.
+## Introduction
 
-## Direct usage in [Storyscript](https://storyscript.io/):
+This project is an example implementation of the [Open Microservice Specification](https://openmicroservices.org), a standard
+originally created at [Storyscript](https://storyscript.io) for building highly-portable "microservices" that expose the
+events, actions, and APIs inside containerized software.
 
-##### Set Key-value cache
-```coffee
->>> memcached set key:'foo' value:'bar'
-{"success":"true/false","message":"success/failure message","statusCode":"HTTPstatusCode"}
+## Getting Started
+
+The `oms` command-line interface allows you to interact with Open Microservices. If you're interested in creating an Open
+Microservice the CLI also helps validate, test, and debug your `oms.yml` implementation!
+
+See the [oms-cli](https://github.com/microservices/oms) project to learn more!
+
+### Installation
+
 ```
-##### Get value pair cache
-```coffee
->>> memcached get key:'foo'
-{"key": "foo","value": "bar","expiration": 0,"statuscode": "HTTPstatusCode"}
+npm install -g @microservices/oms
 ```
 
-Curious to [learn more](https://docs.storyscript.io/)?
+## Usage
 
-✨🍰✨
+### Open Microservices CLI Usage
 
-## Usage with [OMG CLI](https://www.npmjs.com/package/omg)
+Once you have the [oms-cli](https://github.com/microservices/oms) installed, you can run any of the following commands from
+within this project's root directory:
 
-##### Set Key-value cache
+#### Actions
+
+##### set
+
+> Set key/value pair value in memcached
+
+##### Action Arguments
+
+| Argument Name  | Type     | Required | Default | Description              |
+| :------------- | :------- | :------- | :------ | :----------------------- |
+| key            | `string` | `true`   | None    | No description provided. |
+| value          | `any`    | `true`   | None    | No description provided. |
+| MEMCACHED_HOST | `string` | `false`  | None    | The host address         |
+| MEMCACHED_PORT | `int`    | `false`  | None    | The port number          |
+
 ```shell
-$ omg run set -a key=<SET_KEY> -a value=<SET_VALUE> -e MEMCACHED_HOST=<HOST_ADDRESS> -e MEMCACHED_PORT=<PORT_NUMBER>
+oms run set \
+    -a key='*****' \
+    -a value='*****' \
+    -e MEMCACHED_HOST=$MEMCACHED_HOST \
+    -e MEMCACHED_PORT=$MEMCACHED_PORT
 ```
-##### Get value pair cache
+
+##### get
+
+> Get value from server/local machine
+
+##### Action Arguments
+
+| Argument Name  | Type     | Required | Default | Description              |
+| :------------- | :------- | :------- | :------ | :----------------------- |
+| key            | `string` | `true`   | None    | No description provided. |
+| MEMCACHED_HOST | `string` | `false`  | None    | The host address         |
+| MEMCACHED_PORT | `int`    | `false`  | None    | The port number          |
+
 ```shell
-$ omg run get -a key=<SET_KEY> -e MEMCACHED_HOST=<HOST_ADDRESS> -e MEMCACHED_PORT=<PORT_NUMBER>
-```
-**Note**: Start the memcached local server with below command.
-```sh
-$ docker run -p 11211:11211 --name my-memcache -d memcached memcached -m 64
+oms run get \
+    -a key='*****' \
+    -e MEMCACHED_HOST=$MEMCACHED_HOST \
+    -e MEMCACHED_PORT=$MEMCACHED_PORT
 ```
 
-**Note**: the OMG CLI requires [Docker](https://docs.docker.com/install/) to be installed.
+## Contributing
 
-## License
-[MIT License](https://github.com/omg-services/memcached/blob/master/LICENSE).
+All suggestions in how to improve the specification and this guide are very welcome. Feel free share your thoughts in the
+Issue tracker, or even better, fork the repository to implement your own ideas and submit a pull request.
+
+[![Edit memcached on CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/oms-services/memcached)
+
+This project is guided by [Contributor Covenant](https://github.com/oms-services/.github/blob/master/CODE_OF_CONDUCT.md).
+Please read out full [Contribution Guidelines](https://github.com/oms-services/.github/blob/master/CONTRIBUTING.md).
+
+## Additional Resources
+
+- [Install the CLI](https://github.com/microservices/oms) - The OMS CLI helps developers create, test, validate, and build
+  microservices.
+- [Example OMS Services](https://github.com/oms-services) - Examples of OMS-compliant services written in a variety of
+  languages.
+- [Example Language Implementations](https://github.com/microservices) - Find tooling & language implementations in Node,
+  Python, Scala, Java, Clojure.
+- [Storyscript Hub](https://hub.storyscript.io) - A public registry of OMS services.
+- [Community Chat](https://spectrum.chat/open-microservices) - Have ideas? Questions? Join us on Spectrum.
