@@ -1,4 +1,4 @@
-FROM memcached:1.5.12-alpine
+FROM memcached:1.5.20-alpine
 
 USER root
 
